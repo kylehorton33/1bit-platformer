@@ -8,6 +8,7 @@ var level
 const GameUI = preload("res://src/UI/GameUI.tscn")
 
 signal level_won
+signal game_won
 
 func start():
 	level = levels[id].instance()
@@ -22,7 +23,7 @@ func on_win():
 	if id + 1 < levels.size():
 		emit_signal("level_won")
 	else:
-		print("final win state")
+		emit_signal("game_won")
 	
 func is_playing():
 	return get_children().size()

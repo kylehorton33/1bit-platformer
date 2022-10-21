@@ -11,3 +11,6 @@ func update_text(value):
 	
 func play_win():
 	player.play()
+
+func final_win():
+	label.set("custom_colors/font_color", "#4ce600")
