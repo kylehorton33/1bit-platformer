@@ -6,4 +6,4 @@
 - ~~collect collectibles~~
 - add hazards
 - powerups (float bar)
-- basic welcome
+- ~~basic welcome~~
