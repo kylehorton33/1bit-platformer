@@ -23,7 +23,7 @@ func _input(event):
 func welcome_message():
 	var welcome_message = FullScreenMessage.instance()
 	ui.add_child(welcome_message)
-	welcome_message.text = "Press W to start the game\n\nPress Q to quit"
+	welcome_message.text = "Press SPACE to start the game\n\nPress Q to quit"
 
 func start_game():
 	delete_children(ui)
@@ -57,6 +57,6 @@ func on_win():
 func win_message():
 	var win_message = FullScreenMessage.instance()
 	ui.add_child(win_message)
-	win_message.text = "YOU WIN!\n\nPress W to start the game\n\nPress Q to quit"
+	win_message.text = "YOU WIN!\n\nPress SPACE to start the game\n\nPress Q to quit"
 	win_message.play_win()
 	
