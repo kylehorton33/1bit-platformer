@@ -430,3 +430,6 @@ remote_path = NodePath("../../GameCamera")
 
 [node name="Collectible" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 0 )
+
+[node name="Collectible2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 104, -32 )
