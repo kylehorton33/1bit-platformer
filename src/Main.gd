@@ -5,12 +5,14 @@ const FullScreenMessage = preload("res://src/UI/FullScreenMessage.tscn")
 const GameUI = preload("res://src/UI/GameUI.tscn")
 
 onready var ui = $UI
+onready var background_music = $BackgroundMusic
 
 var world = null
 
 func _ready():
 	VisualServer.set_default_clear_color(Color(0,0,0))
 	welcome_message()
+	background_music.play()
 
 func _input(event):
 	if event.is_action_pressed("quit"):

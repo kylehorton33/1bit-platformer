@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spooky_enchantment.mp3-7691f3467a2e38987417dfc89712b13e.mp3str"
+
+[deps]
+
+source_file="res://src/spooky_enchantment.mp3"
+dest_files=[ "res://.import/spooky_enchantment.mp3-7691f3467a2e38987417dfc89712b13e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
