@@ -13,15 +13,15 @@ func _ready():
 	welcome_message()
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("quit"):
 		get_tree().quit()
-	if !world && event.is_action_pressed("ui_accept"):
+	if !world && event.is_action_pressed("start"):
 		start_game()
 
 func welcome_message():
 	var welcome_message = FullScreenMessage.instance()
 	ui.add_child(welcome_message)
-	welcome_message.text = "Press SPACE to start the game\n\nPress ESC to quit"
+	welcome_message.text = "Press W to start the game\n\nPress Q to quit"
 
 func start_game():
 	delete_children(ui)
@@ -55,6 +55,6 @@ func on_win():
 func win_message():
 	var win_message = FullScreenMessage.instance()
 	ui.add_child(win_message)
-	win_message.text = "YOU WIN!\n\nPress SPACE to start the game\n\nPress ESC to quit"
+	win_message.text = "YOU WIN!\n\nPress W to start the game\n\nPress Q to quit"
 	win_message.play_win()
 	
