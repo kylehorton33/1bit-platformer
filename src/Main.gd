@@ -1,23 +1,21 @@
 extends Node
 
-const GameWorld = preload("res://src/Levels/Level_01.tscn")
 const FullScreenMessage = preload("res://src/UI/FullScreenMessage.tscn")
-const GameUI = preload("res://src/UI/GameUI.tscn")
 
 onready var ui = $UI
 onready var background_music = $BackgroundMusic
-
-var world = null
+onready var level_manager = $LevelManager
 
 func _ready():
 	VisualServer.set_default_clear_color(Color(0,0,0))
 	welcome_message()
 	background_music.play()
+	level_manager.connect("level_won", self, "on_win")
 
 func _input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
-	if !world && event.is_action_pressed("start"):
+	if !level_manager.is_playing() && event.is_action_pressed("start"):
 		start_game()
 
 func welcome_message():
@@ -27,31 +25,15 @@ func welcome_message():
 
 func start_game():
 	delete_children(ui)
-	create_world()
-	start_game_ui()
-	
-func create_world():
-	world = GameWorld.instance()
-	get_tree().current_scene.add_child(world)
-	get_tree().current_scene.move_child(world, 0)
-	
-func start_game_ui():
-	var game_ui = GameUI.instance()
-	ui.add_child(game_ui)
-	var collectibles = get_tree().get_nodes_in_group("collectibles")
-	game_ui.total_collectibles = collectibles.size()
-	game_ui.connect("collected_all", self, "on_win")
-	for collectible in collectibles:
-		collectible.connect("collected", game_ui, "on_collected")
+	level_manager.start()
+
 
 func delete_children(node):
 	for n in node.get_children():
 		n.queue_free()
 		
 func on_win():
-	get_tree().current_scene.remove_child(world)
-	world = null
-	delete_children(ui)
+	level_manager.id += 1
 	win_message()
 	
 func win_message():

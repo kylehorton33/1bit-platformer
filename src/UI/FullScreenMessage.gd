@@ -3,9 +3,9 @@ extends Control
 onready var label = $VBoxContainer/Label
 onready var player = $AudioStreamPlayer
 
-var text = "default" setget udpate_text
+var text = "default" setget update_text
 
-func udpate_text(value):
+func update_text(value):
 	text = value
 	label.text = text
 	
