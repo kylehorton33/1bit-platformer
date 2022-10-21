@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UI/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/GameUI.gd" type="Script" id=2]
+[ext_resource path="res://src/Collectible/collectible_sprite.png" type="Texture" id=3]
 
 [node name="GameUI" type="Control"]
 theme = ExtResource( 1 )
@@ -13,5 +14,14 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = -4.0
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_bottom = 11.0
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 45.0
+margin_bottom = 13.0
+text = "0 / 3"
