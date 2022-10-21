@@ -5,6 +5,7 @@ const JUMP_SPEED = 400
 const MAX_H_SPEED = 125
 const H_ACCELERATION = 2000
 const JUMP_MULTIPLIER = 3
+const AIR_RESISTANCE = 0.5
 
 var velocity = Vector2.ZERO
 var movement = Vector2.ZERO
@@ -30,7 +31,7 @@ func _process(delta):
 	if (velocity.y < 0 && !Input.is_action_just_pressed("jump")):
 		velocity.y += GRAVITY * JUMP_MULTIPLIER * delta
 	else:
-		velocity.y += GRAVITY * delta
+		velocity.y += GRAVITY * delta * AIR_RESISTANCE
 
 	# MOVE PLAYER
 	velocity = move_and_slide(velocity, Vector2.UP)
