@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/win.wav-051e11dc38c859bc664c37fc058afed0.sample"
+path="res://.import/win.wav-0d70f2f69f23abfe56d6be9c61435ded.sample"
 
 [deps]
 
-source_file="res://src/win.wav"
-dest_files=[ "res://.import/win.wav-051e11dc38c859bc664c37fc058afed0.sample" ]
+source_file="res://src/UI/win.wav"
+dest_files=[ "res://.import/win.wav-0d70f2f69f23abfe56d6be9c61435ded.sample" ]
 
 [params]
 

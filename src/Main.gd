@@ -53,7 +53,8 @@ func on_win():
 	win_message()
 	
 func win_message():
-	var welcome_message = FullScreenMessage.instance()
-	ui.add_child(welcome_message)
-	welcome_message.text = "YOU WIN!\n\nPress SPACE to start the game\n\nPress ESC to quit"
+	var win_message = FullScreenMessage.instance()
+	ui.add_child(win_message)
+	win_message.text = "YOU WIN!\n\nPress SPACE to start the game\n\nPress ESC to quit"
+	win_message.play_win()
 	
