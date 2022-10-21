@@ -3,7 +3,7 @@
 - ~~get font~~ 
 -- (https://www.1001fonts.com/fff-forward-font.html)
 - ~~basic UI~~
-- collect collectibles
+- ~~collect collectibles~~
 - add hazards
 - powerups (float bar)
 - basic welcome
