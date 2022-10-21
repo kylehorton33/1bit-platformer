@@ -1,6 +1,6 @@
 extends Node
 
-const GameWorld = preload("res://src/World.tscn")
+const GameWorld = preload("res://src/Levels/Level_01.tscn")
 const FullScreenMessage = preload("res://src/UI/FullScreenMessage.tscn")
 const GameUI = preload("res://src/UI/GameUI.tscn")
 
@@ -23,7 +23,7 @@ func _input(event):
 func welcome_message():
 	var welcome_message = FullScreenMessage.instance()
 	ui.add_child(welcome_message)
-	welcome_message.text = "Press SPACE to start the game\n\nPress Q to quit"
+	welcome_message.text = "Press SPACE to start\n\nPress Q to quit"
 
 func start_game():
 	delete_children(ui)
@@ -57,6 +57,6 @@ func on_win():
 func win_message():
 	var win_message = FullScreenMessage.instance()
 	ui.add_child(win_message)
-	win_message.text = "YOU WIN!\n\nPress SPACE to start the game\n\nPress Q to quit"
+	win_message.text = "YOU WIN!\n\nPress SPACE to play next level\n\nPress Q to quit"
 	win_message.play_win()
 	
