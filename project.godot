@@ -12,7 +12,6 @@ config_version=4
 
 config/name="1BIT"
 run/main_scene="res://src/Main.tscn"
-config/icon="res://icon.png"
 
 [display]
 
@@ -72,7 +71,3 @@ quit={
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
