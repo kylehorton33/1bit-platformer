@@ -3,7 +3,7 @@ extends Node
 export(Array, PackedScene) var levels
 
 var id = 0 setget change_level
-var level
+var current_level
 
 const GameUI = preload("res://src/UI/GameUI.tscn")
 
@@ -11,13 +11,13 @@ signal level_won
 signal game_won
 
 func start():
-	level = levels[id].instance()
-	add_child(level)
-	level.connect("collected_all", self, "on_win")
+	current_level = levels[id].instance()
+	add_child(current_level)
+	current_level.connect("collected_all", self, "on_win")
 
 func change_level(value):
 	id = value
-	remove_child(level)
+	remove_child(current_level)
 
 func on_win():
 	if id + 1 < levels.size():
