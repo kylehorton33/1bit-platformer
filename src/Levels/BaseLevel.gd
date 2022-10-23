@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var ui = $CanvasLayer/GameUI
+onready var end_timer = $EndTimer
 
 var n_collectibles = 0
 var n_collected = 0
@@ -18,4 +19,7 @@ func on_collected():
 	n_collected += 1
 	ui.collected = n_collected
 	if (n_collected >= n_collectibles):
-		emit_signal("collected_all")
+		end_timer.start(0.5)
+
+func _on_EndTimer_timeout():
+	emit_signal("collected_all")
